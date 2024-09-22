@@ -12933,6 +12933,36 @@ div.round,
   display: none;
 }
 
+#demo {
+  display: flex;
+  justify-content: center;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+#demo div {
+  margin: 0 10px;
+}
+
+#demo span {
+  display: block;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+@media only screen and (max-width: 600px) {
+  #demo div {
+      font-size: 1.2rem;
+  }
+}
+
+.expired {
+  color: red;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+
 .fp-wrap {
   border-radius: 20px;
   -moz-border-radius: 20px;
