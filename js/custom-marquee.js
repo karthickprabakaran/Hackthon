@@ -1,7 +1,7 @@
 $(function(){
     $('.de-marquee-list').marquee({
         direction: 'left',
-        duration: 50000,
+        duration: 10000,
         gap: 0,
         delayBeforeStart: 0,
         duplicated: true,
@@ -10,7 +10,7 @@ $(function(){
 
     $('.wm-carousel').marquee({
         direction: 'left',
-        duration: 20000,
+        duration: 2000,
         gap: 100,
         delayBeforeStart: 0,
         duplicated: true,
