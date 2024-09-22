@@ -11986,7 +11986,7 @@ i.bg-color-secondary {
 }
 
 .de-pricing-s1 .d-price:before{
-  content: '$';
+  content: '₹';
   font-size: 20px;
 }
 
@@ -18896,4 +18896,12 @@ img {
   }
 
   .container-timeline ul li::before {
-    left: 0
+    left: 0 
+  }
+}
+@media (max-width: 768px) {
+  .countdown-container {
+      flex-direction: row; 
+      gap: 15px;
+  }
+}

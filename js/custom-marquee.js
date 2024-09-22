@@ -10,7 +10,7 @@ $(function(){
 
     $('.wm-carousel').marquee({
         direction: 'left',
-        duration: 2000,
+        duration: 10000,
         gap: 100,
         delayBeforeStart: 0,
         duplicated: true,
