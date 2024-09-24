@@ -13136,11 +13136,17 @@ i.big {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  margin-top: -10px;
+  margin-left: 20px;
   line-height: 1.6em;
 }
 
 .schedule-item .sc-name span {
   font-weight: normal;
+}
+
+.sc-time{
+  margin-top: -20px;
 }
 
 .schedule-item .sc-info {
