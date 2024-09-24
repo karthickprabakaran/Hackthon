@@ -13154,7 +13154,6 @@ i.big {
   display: inline-block;
   width: 60%;
 }
-
 .schedule-item .sc-info h4 {
   margin-bottom: 10px;
 }
@@ -18911,3 +18910,16 @@ img {
       gap: 15px;
   }
 }
+
+
+/* css for the hackathon time line */
+
+
+section{
+  margin-top: -2%;
+}
+
+
+
+
+
