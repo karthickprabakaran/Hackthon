@@ -13136,6 +13136,8 @@ i.big {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  margin-top: -10px;
+  margin-left: 20px;
   line-height: 1.6em;
 }
 
@@ -13143,12 +13145,15 @@ i.big {
   font-weight: normal;
 }
 
+.sc-time{
+  margin-top: -20px;
+}
+
 .schedule-item .sc-info {
   float: none;
   display: inline-block;
   width: 60%;
 }
-
 .schedule-item .sc-info h4 {
   margin-bottom: 10px;
 }
@@ -18907,3 +18912,17 @@ img {
 }
 
 
+<<<<<<< HEAD
+=======
+/* css for the hackathon time line */
+
+
+section{
+  margin-top: -1%;
+}
+
+
+
+
+
+>>>>>>> 7bf55f489d025ddad2e84f01378bf52cb7ca6706
