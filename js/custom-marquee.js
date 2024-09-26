@@ -1,7 +1,7 @@
 $(function(){
     $('.de-marquee-list').marquee({
         direction: 'left',
-        duration: 10000,
+        duration: 15000,
         gap: 0,
         delayBeforeStart: 0,
         duplicated: true,
