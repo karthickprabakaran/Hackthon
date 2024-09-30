@@ -18951,3 +18951,218 @@ section{
 
 
 
+
+
+/*--------------------------------------------------------------
+# Timeline
+--------------------------------------------------------------*/
+#hackathon-timeline {
+
+	background-color: #000000;
+	color: #fff;
+	padding: 40px;
+	font-family: Arial, sans-serif;
+	overflow: hidden;
+}
+#hackathon-timeline h2 {
+	text-align: center;
+	margin-bottom: 40px;
+	color: #00FF9C;
+}
+.timeline {
+	position: relative;
+	margin: 0 auto;
+	padding: 20px 0;
+	width: 80%;
+}
+.timeline-line {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 4px;
+	background: #00FF9C;
+	transform: translateX(-50%);
+	z-index: 1;
+	height: 0;
+	transition: height 1s ease;
+}
+.timeline-item {
+	position: relative;
+	margin: 20px 0;
+	padding-left: 50%;
+	z-index: 2;
+}
+.timeline-item:nth-child(even) {
+	padding-left: 0;
+	padding-right: 50%;
+	text-align: right;
+}
+.timeline-item::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	background: #00FF9C;
+	border-radius: 50%;
+	z-index: 3;
+	transform: translateX(-50%);
+}
+.timeline-date {
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #3498db;
+	font-size: 20px;
+}
+.timeline-content {
+	padding: 20px;
+	background: #222;
+	border-radius: 10px;
+	position: relative;
+	z-index: 4;
+  border:2px solid transparent;
+  border-image: linear-gradient(45deg, #3498db,#000,#00FF9C)1;
+}
+.timeline-item:nth-child(odd) .timeline-content {
+	margin-left: 20px;
+}
+.timeline-item:nth-child(even) .timeline-content {
+	margin-right: 20px;
+}
+
+@media(max-width : 768px) {
+	.timeline{
+		padding: 100px 0px 0px 0px;
+	}
+
+	.timeline-item:nth-child(even),
+	.timeline-item:nth-child(odd) {
+		padding-left: 0;
+		padding-right: 0%;
+		text-align: left;
+	}
+
+	.timeline-item:nth-child(odd) .timeline-content,
+	.timeline-item:nth-child(even) .timeline-content {
+		margin-right: 0;
+		margin-left: 20px;
+	}
+
+	.timeline-line {
+		left: 0%;
+	}
+}
+
+/*--------------------------------------------------------------
+# FAQs
+--------------------------------------------------------------*/
+#faq .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+#faq h2.faq-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 36px;
+  color: #f5f6fa;
+}
+
+#faq .faq-section {
+  padding: 40px 0;
+}
+
+#faq .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#faq .faq-column {
+  width: 48%;
+}
+
+#faq .accordion {
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+#faq .accordion-item {
+  background-color: #333;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+#faq .accordion-button {
+  font-family: "Teko", sans-serif !important;
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+#faq .accordion-button:hover {
+  background-color: #444;
+}
+
+#faq .accordion-icon {
+  font-size: 20px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+#faq .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #444;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+  padding: 0 15px;
+  line-height: 1.6;
+}
+
+#faq .accordion-content p {
+  margin: 10px 0;
+  padding: 5px 10px;
+  font-size: 18px !important;
+  color: #fff; 
+  align-items: center !important;
+  text-align: justify;
+}
+
+#faq .accordion-item.active {
+  box-shadow: 0 0 15px rgba(50, 205, 50, 0.7);
+  border: 1px solid rgba(50, 205, 50, 0.7);
+}
+
+#faq .accordion-item.active .accordion-button {
+  background-color: rgba(50, 205, 50, 0.1);
+}
+
+@media(max-width: 768px) {
+  #faq .faq-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media(max-width: 480px) {
+  #faq .accordion {
+    padding: 0px !important;
+  }
+  .faq-column {
+    margin-bottom: 0px !important;
+  }
+}
