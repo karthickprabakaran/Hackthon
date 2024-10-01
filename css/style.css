@@ -19087,6 +19087,9 @@ section{
   position: relative;
   transition: all 0.3s ease-in-out;
 }
+#faq .accordion-button:hover {
+  background-color: #444;
+}
 
 #faq .accordion-button {
   font-family: "Teko", sans-serif !important;
@@ -19099,21 +19102,20 @@ section{
   color: #fff;
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Ensures space between text and icon */
   align-items: center;
   transition: background-color 0.3s ease;
-}
-
-#faq .accordion-button:hover {
-  background-color: #444;
+  position: relative;
 }
 
 #faq .accordion-icon {
   font-size: 20px;
   font-weight: bold;
+  margin-left: auto; /* Pushes the icon to the right */
+  position: absolute;
+  right: 15px; /* Aligns the icon to the far right with padding */
   transition: transform 0.3s ease;
 }
-
 #faq .accordion-content {
   max-height: 0;
   overflow: hidden;
