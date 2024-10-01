@@ -11988,7 +11988,7 @@ i.bg-color-secondary {
 }
 
 .de-pricing-s1 .d-price:before{
-  content: '₹';
+  content: '';
   font-size: 20px;
 }
 
@@ -18921,9 +18921,6 @@ section{
 }
 
 
-
-
-
 .tree-structure {
   display: flex;
   flex-direction: column;
@@ -18948,14 +18945,7 @@ section{
 }
 
 
-
-
-
-
-
-/*--------------------------------------------------------------
-# Timeline
---------------------------------------------------------------*/
+/* Timeline */
 #hackathon-timeline {
 
 	background-color: #000000;
@@ -19053,9 +19043,9 @@ section{
 	}
 }
 
-/*--------------------------------------------------------------
-# FAQs
---------------------------------------------------------------*/
+
+
+/* FAQ Section */
 #faq .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -19128,41 +19118,27 @@ section{
   max-height: 0;
   overflow: hidden;
   background-color: #444;
-  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+  transition: max-height 0.4s ease-in-out;
   padding: 0 15px;
   line-height: 1.6;
+}
+
+#faq .accordion-content.show {
+  max-height: 500px; /* Adjust as needed */
 }
 
 #faq .accordion-content p {
   margin: 10px 0;
   padding: 5px 10px;
   font-size: 18px !important;
-  color: #fff; 
+  color: #fff;
   align-items: center !important;
   text-align: justify;
-}
-
-#faq .accordion-item.active {
-  box-shadow: 0 0 15px rgba(50, 205, 50, 0.7);
-  border: 1px solid rgba(50, 205, 50, 0.7);
-}
-
-#faq .accordion-item.active .accordion-button {
-  background-color: rgba(50, 205, 50, 0.1);
 }
 
 @media(max-width: 768px) {
   #faq .faq-column {
     width: 100%;
     margin-bottom: 20px;
-  }
-}
-
-@media(max-width: 480px) {
-  #faq .accordion {
-    padding: 0px !important;
-  }
-  .faq-column {
-    margin-bottom: 0px !important;
   }
 }

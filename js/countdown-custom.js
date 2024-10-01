@@ -51,49 +51,34 @@ function startCountdown(targetDate) {
 }
 
 
-// FAQ transition js
+// FAQ Accordion JS
 // Select all accordion buttons
 const accordionButtons = document.querySelectorAll('.accordion-button');
 
 // Loop through all accordion buttons
 accordionButtons.forEach(button => {
     button.addEventListener('click', function () {
-        // Get the currently opened accordion item (if any)
-        const openAccordion = document.querySelector('.accordion-content.show');
-
-        // If there's an open accordion and it's not the one that was clicked, close it
-        if (openAccordion && openAccordion !== this.nextElementSibling) {
-            // Collapse the previous button
-            openAccordion.previousElementSibling.querySelector('.accordion-button').classList.add('collapsed');
-
-            // Collapse the open accordion
-            openAccordion.style.height = openAccordion.scrollHeight + 'px';
-            window.getComputedStyle(openAccordion).height; // Force reflow
-            openAccordion.style.height = '0';
-
-            openAccordion.addEventListener('transitionend', () => {
-                openAccordion.classList.remove('show');
-                openAccordion.style.height = null;
-            }, { once: true });
-        }
-
-        // Toggle the clicked accordion item
+        // Get the accordion content related to this button
         const collapse = this.nextElementSibling;
 
-        if (!collapse.classList.contains('show')) {
-            // Expand the new accordion panel
+        // If this accordion is already open, close it
+        if (collapse.classList.contains('show')) {
+            collapse.style.maxHeight = 0;
+            collapse.classList.remove('show');
+            this.querySelector('.accordion-icon').textContent = '+';
+        } else {
+            // Close any currently opened accordion items
+            const openAccordion = document.querySelector('.accordion-content.show');
+            if (openAccordion) {
+                openAccordion.style.maxHeight = 0;
+                openAccordion.classList.remove('show');
+                openAccordion.previousElementSibling.querySelector('.accordion-icon').textContent = '+';
+            }
+
+            // Open the clicked accordion item
             collapse.classList.add('show');
-            collapse.style.height = '0';
-            window.getComputedStyle(collapse).height; // Force reflow
-            collapse.style.height = collapse.scrollHeight + 'px';
-
-            // Remove inline height after transition ends
-            collapse.addEventListener('transitionend', () => {
-                collapse.style.height = null;
-            }, { once: true });
-
-            // Toggle the collapsed state of the button
-            this.classList.remove('collapsed');
+            collapse.style.maxHeight = collapse.scrollHeight + 'px';
+            this.querySelector('.accordion-icon').textContent = '-';
         }
     });
 });
@@ -102,7 +87,7 @@ accordionButtons.forEach(button => {
 window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
     const heading = document.getElementById('heading-pec'); // "PEC HACKS 2.0" heading
-    const headingOffset = heading.offsetTop; // Get the heading's position from the top of the page
+    const headingOffset = heading ? heading.offsetTop : 0; // Ensure heading exists
     const scrollPosition = window.scrollY; // Current scroll position
 
     if (scrollPosition > headingOffset) {
@@ -111,3 +96,4 @@ window.addEventListener('scroll', function () {
         header.classList.remove('scrolled');
     }
 });
+
