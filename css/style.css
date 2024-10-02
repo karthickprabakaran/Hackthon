@@ -70,7 +70,7 @@ Table of content:
   --title-font: "Prompt", Helvetica, Arial, sans-serif;
   --body-font: "Manrope", Helvetica, Arial, sans-serif;
   --border-: solid 1px rgba(30, 30, 30, 1);
-  --bg-color-even: #E8E8E8;
+  /* --bg-color-even: #E8E8E8; */
   --bg-color-odd: #F4F4F4;
   --bg-color-dark: #000000;
   --body-font-color: #757575;
@@ -19144,3 +19144,125 @@ section{
     margin-bottom: 20px;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .container, #content, section, footer {
+    background: transparent;
+    padding: 10px;
+  }
+  header .de-flex {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header #logo {
+      flex: 1;
+      text-align: left;
+  }
+
+  .menu_side_area {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+  }
+
+  #mainmenu {
+      display: none;
+  }
+  #menu-btn {
+      display: block;
+  }
+
+  #section-hero {
+      padding: 20px;
+  }
+  #section-hero h1 {
+      font-size: 1.8em;
+      overflow-wrap: break-word;
+  }
+  #section-hero p {
+      font-size: 1em;
+      overflow-wrap: break-word;
+  }
+  #section-hero img {
+      width: 100%;
+      height: auto;
+  }
+
+  .timeline-item {
+      text-align: center;
+      padding: 10px;
+      overflow-wrap: break-word;
+  }
+
+  .de-pricing-s1 {
+      margin-bottom: 20px;
+      padding: 15px;
+  }
+  .de-pricing-s1 h3 {
+      font-size: 1.2em;
+      overflow-wrap: break-word;
+  }
+  .de-pricing-s1 .d-price {
+      font-size: 2em;
+  }
+
+  .de_count {
+      font-size: 2em;
+  }
+  .de_count img {
+      display: none;
+  }
+
+  footer {
+      text-align: center;
+  }
+}
+
+/* Medium devices (tablets, 600px to 992px) */
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  #section-hero {
+      padding: 40px;
+  }
+  #section-hero h1 {
+      font-size: 2.5em;
+      overflow-wrap: break-word;
+  }
+  #section-hero p {
+      font-size: 1.2em;
+      overflow-wrap: break-word;
+  }
+  #section-hero img {
+      width: 80%;
+  }
+
+  .timeline-item {
+      text-align: left;
+  }
+
+  .de-pricing-s1 {
+      margin-bottom: 40px;
+      padding: 20px;
+  }
+  .de-pricing-s1 h3 {
+      font-size: 1.5em;
+      overflow-wrap: break-word;
+  }
+  .de-pricing-s1 .d-price {
+      font-size: 3em;
+  }
+
+  .de_count {
+      font-size: 2.5em;
+  }
+  .de_count img {
+      width: 80%;
+  }
+
+  footer {
+      text-align: center;
+      font-size: 1.2em;
+  }
+}
+
