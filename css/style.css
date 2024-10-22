@@ -18572,7 +18572,10 @@ img {
   }
 
   .sm-img-fluid{
-    width: 100%;
+    background-color: white; /* Set background to white */
+    width: 100%; /* Ensure the image takes full width */
+    height: 100%; /* Ensure the image takes full height */
+    object-fit: contain;
   }
 
 }
