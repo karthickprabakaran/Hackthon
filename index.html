@@ -5,19 +5,43 @@
     <title>HackHustle</title>
     <link rel="icon" href="images/HH logo.png" type="image/gif" sizes="20x20">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <!-- <meta content="width=device-width, initial-scale=1.0" name="viewport" -->
+    <!-- <meta content="width=device-width, initial-scale=1.0" name="viewport"> -->
     <meta content="HackHustle" name="description">
     <meta content="" name="keywords">
     <meta content="" name="author">
     <!-- CSS Files -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
-    <link href="css/mdb.min.css" rel="stylesheet" type="text/css" id="mdb">
-    <link href="css/plugins.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="images/background/172.jpg" as="image">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap" crossorigin>
+    <link href="css/mdb.min.css" rel="stylesheet" type="text/css" id="mdb" crossorigin>
+    <link href="css/plugins.css" rel="stylesheet" type="text/css" crossorigin>
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="css/coloring.css" rel="stylesheet" type="text/css">
+    <link href="css/coloring.css" rel="stylesheet" type="text/css" crossorigin>
     <!-- color scheme -->
     <link id="colors" href="css/colors/blue-teal.css" rel="stylesheet" type="text/css">
-    <script defer async src="https://apply.devfolio.co/v2/sdk.js"></script>
+    <script>
+        // Preloader
+        $(window).on("load", function () {
+            $("#de-loader").fadeOut();
+            $("#wrapper").removeClass("dark-scheme");
+        });
+        // Smooth scrolling
+        $(document).ready(function () {
+            $("a").on("click", function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $("html, body").animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+
+    </script>
 </head>
 
 <body class="dark-scheme">
@@ -26,8 +50,6 @@
         <!-- page preloader begin -->
         <div id="de-loader"></div>
         <!-- page preloader close -->
-
-        <!-- header begin -->
         <header class="transparent">
             <div class="container">
                 <div class="row">
@@ -38,8 +60,10 @@
                                     <!-- logo begin -->
                                     <div id="logo">
                                         <a href="index.html">
-                                            <img src="./images/lo-removebg-preview.png" class="logo-mobile" alt="" style="max-width: 120px;">
-                                            <img src="./images/lo-removebg-preview.png" class="logo-main" style="max-width: 120px;" alt="">
+                                            <source srcset="image.webp" type="image/webp">
+                                            <img src="./images/lo-removebg-preview.jpg" class="logo-mobile" type="image/webp" alt="" style="max-width: 120px;" loading="eager">
+                                            <source srcset="image.webp" type="image/webp">
+                                            <img src="./images/lo-removebg-preview.jpg" class="logo-main" type="image/webp" style="max-width: 120px;" alt="" loading="eager">
                                         </a>
                                     </div>
                                     <!-- logo close -->
@@ -75,7 +99,7 @@
         <div class="no-bottom no-top" id="content">
             <div id="top"></div>
             <section id="section-hero" class="jarallax">
-                <img src="images/background/1.jpg" class="jarallax-img" alt="">
+                <img src="images/background/172.jpg" class="jarallax-img" alt="" loading="eager">
                 <div class="container position-relative z1000 wow fadeInDown">
                     <div class="row align-items-center position-relative">
                         <div class="spacer-double d-lg-none d-sm-block"></div>
@@ -85,9 +109,6 @@
                             <h1 class="ultra-big text-uppercase mb-4 wow fadeInRight"><span class="wow fadeInLeft" data-wow-delay=".4s">Get Ready</span> <span class="text-line">to</span> <span class="text-gradient">Experience</span> <span class="text-line wow fadeInRight" data-wow-delay=".4s">Biggest</span> Hack Hustle Event</h1>
                         </div>
                         <div class="clearfix"></div>
-                        <div class="col-lg-1 col-2">
-                            <img src="images/misc/arrow-up-right.png" class="img-fluid wow fadeInLeft" alt="">
-                        </div>
                         <div class="col-lg-5 col-10">
                             <div class="position-relative">
                                 <p class="lead no-bottom wow fadeInLeft">Unleashing the<b> Hack Hustle </b>revolution: a thrilling fusion of creativity, collaboration, and cutting-edge technology where innovators solve real-world problems, push the boundaries of technical excellence, and drive the future forward. Get ready for electrifying challenges, team up with the brightest minds, and turn your bold ideas into groundbreaking solutions!</p>
@@ -97,9 +118,9 @@
                         <div class="col-lg-3">
                             <a class="btn-main big wow fadeInLeft" href="https://hackhustle.devfolio.co/">Register Now</a>
                         </div>
+                        </div>
                     </div>
                 </div>
-                <div class="de-gradient-edge-bottom"></div>
             </section>
 
             <section aria-label="section" class="no-top no-bottom scroller">
@@ -124,6 +145,7 @@
                             <h2 class="text-uppercase wow fadeInUp">Choose your <span class="text-gradient">Domain</span></h2>
                             <h5><span class="text-gradient">HACK HUSTLE</span> offers problem statements across these dynamic streams</h5>
                             <div class="spacer-40"></div>
+                            <div class="spacer-40"></div>
                         </div>
             
                         <div class="col-lg-4" data-jarallax-element="20">
@@ -132,13 +154,9 @@
                                     <h3 style="font-size:33px;">Machine Learning<span>Unlock AI Mastery</span></h3>
                                     <p>Step into the future of intelligent systems! In the Machine Learning domain, you'll have the chance to build algorithms that learn, adapt, and innovate. From predictive analytics to cutting-edge AI solutions, this is your playground to shape tomorrow’s technologies and make machines smarter than ever before.</p>
                                     <div class="spacer-20"></div>
-                                    <!-- <div class="text-center">
-                                        <a class="btn-main" href="https://devfolio.co/">Register Now</a>
-                                    </div> -->
                                 </div>
                                 <div class="d-deco-top"></div>
                                 <div class="d-deco-bottom"></div>
-                                <!-- <img src="images/misc/arrow-up-right.png" class="d-image-deco" alt=""> -->
                             </div>
                         </div>
             
@@ -148,13 +166,9 @@
                                     <h3 style="font-size:33px;">Web3 & Blockchain<span>Access Web3 Future</span></h3>
                                     <p>Unlock the power of decentralization! Web3 and Blockchain are at the forefront of a technological revolution. In this domain, you’ll explore the world of decentralized apps, smart contracts, and cryptocurrencies. Be part of the future that is redefining how we interact, transact, and trust in the digital world.</p>
                                     <div class="spacer-20"></div>
-                                    <!-- <div class="text-center">
-                                        <a class="btn-main" href="https://devfolio.co/">Register Now</a>
-                                    </div> -->
                                 </div>
                                 <div class="d-deco-top"></div>
                                 <div class="d-deco-bottom"></div>
-                                <!-- <img src="images/misc/arrow-up-right.png" class="d-image-deco" alt=""> -->
                             </div>
                         </div>
             
@@ -164,13 +178,9 @@
                                     <h3 style="font-size:33px;">Cyber security<span>Secure the Digital Frontier</span></h3>
                                     <p>Defend the digital frontier! The Cybersecurity domain challenges you to develop solutions that protect against ever-evolving threats. Whether it’s building secure systems, ethical hacking, or safeguarding sensitive data, you’ll be stepping up as a guardian of the digital age.</p>
                                     <div class="spacer-20"></div>
-                                    <!-- <div class="text-center">
-                                        <a class="btn-main" href="https://devfolio.co/">Register Now</a>
-                                    </div> -->
                                 </div>
                                 <div class="d-deco-top"></div>
                                 <div class="d-deco-bottom"></div>
-                                <!-- <img src="images/misc/arrow-up-right.png" class="d-image-deco" alt=""> -->
                             </div>
                         </div>
                     </div>
@@ -185,28 +195,28 @@
                                 <h3 class="timer days text-gradient" data-to="0" data-speed="1">0</h3>
                                 <h4 class="text-uppercase">Days</h4>
                             </div>
-                            <img src="images/misc/circle-gradient.png" class="img-fluid" alt="">
+                            <img src="images/misc/circle-gradient72.png" class="img-fluid" alt="">
                         </div>
                         <div class="col-md-3 col-sm-6 mb-sm-30 position-relative" data-jarallax-element="-50">
                             <div class="de_count position-absolute top-50 start-50 translate-middle text-light wow fadeInUp">
                                 <h3 class="timer hours text-line" data-to="0" data-speed="1">0</h3>
                                 <h4 class="text-uppercase">Hours</h4>
                             </div>
-                            <img src="images/misc/circle-gradient-2.png" class="img-fluid" alt="">
+                            <img src="images/misc/circle-gradient-272.png" class="img-fluid" alt="">
                         </div>
                         <div class="col-md-3 col-sm-6 mb-sm-30 position-relative">
                             <div class="de_count position-absolute top-50 start-50 translate-middle text-light wow fadeInUp">
                                 <h3 class="timer minutes text-gradient" data-to="0" data-speed="1">0</h3>
                                 <h4 class="text-uppercase">Minutes</h4>
                             </div>
-                            <img src="images/misc/circle-gradient.png" class="img-fluid" alt="">
+                            <img src="images/misc/circle-gradient72.png" class="img-fluid" alt="">
                         </div>
                         <div class="col-md-3 col-sm-6 mb-sm-30 position-relative" data-jarallax-element="-50">
                             <div class="de_count position-absolute top-50 start-50 translate-middle text-light wow fadeInUp">
                                 <h3 class="timer seconds text-line" data-to="0" data-speed="1">0</h3>
                                 <h4 class="text-uppercase">Seconds</h4>
                             </div>
-                            <img src="images/misc/circle-gradient-2.png" class="img-fluid" alt="">
+                            <img src="images/misc/circle-gradient-272.png" class="img-fluid" alt="">
                         </div>
                     </div>
                 </div>
@@ -278,13 +288,6 @@
                         </div>
                     </div>
         
-                    <!-- <div class="timeline-item" data-aos="fade-left">
-                        <div class="timeline-content">
-                            <div class="icon">🎓</div>
-                            <span class="text-gradient" style="font-weight: bold; font-size: 20px">13th December 2024</span>
-                            <h3>Team Mentoring</h3>
-                        </div>
-                    </div> -->
         
                     <div class="timeline-item" data-aos="fade-right">
                         <div class="timeline-content">
@@ -328,7 +331,6 @@
                                 </div>
                                 <div class="d-deco-top"></div>
                                 <div class="d-deco-bottom"></div>
-                                <img src="images/misc/arrow-up-right.png" class="d-image-deco" alt="">
                             </div>
                         </div>
             
@@ -342,7 +344,6 @@
                                 </div>
                                 <div class="d-deco-top"></div>
                                 <div class="d-deco-bottom"></div>
-                                <img src="images/misc/arrow-up-right.png" class="d-image-deco" alt="">
                             </div>
                         </div>
             
@@ -353,6 +354,7 @@
                                 <h3>Swags and Other Things 🎁</h3>
                                 <p class="text-lg-center">Get exclusive swags like <strong class="text-gradient">T-shirts, stickers, and more!</strong> These are limited-edition items that you won't want to miss out on. Grab yours by being part of this amazing event!</p>
                                 <div class="spacer-20"></div>
+                                <div class="spacer-40"></div>
                             </div>
                         </div>
                     </div>
@@ -369,15 +371,13 @@
                                     The <span class="text-line">MasterMinds</span> behind the <span class="text-gradient">HackHustle</span>
                                 </h2>
                                 <div class="row">
-                                    <div class="col-lg-2 col-2">
-                                        <img src="images/misc/arrow-up-right.png" class="img-fluid" alt="" data-jarallax-element="-30">
-                                    </div>
                                     <div class="col-lg-10 col-10">
                                         <p class="wow fadeInRight" data-wow-delay=".4s">Meet the passionate team behind HackHustle, a group of driven innovators and tech enthusiasts dedicated to solving real-world challenges through creativity and collaboration. With diverse expertise and a shared vision, they're committed to making this hackathon an unforgettable experience!</p>
                                     </div>
                                 </div>
+                                <div class="spacer-40"></div>
                             </div>
-                            <img src="images/misc/circle-gradient-2.png" class="position-absolute top-50 start-50 translate-middle" alt="">
+                            <img src="images/misc/circle-gradient-272.png" class="position-absolute top-50 start-50 translate-middle" alt="">
                         </div>
             
                         <div class="col-lg-6">
@@ -387,7 +387,7 @@
                                     <!-- Sponsor 1 -->
                                     <div class="col-lg-4 col-md-4 col-6">
                                         <div class="de-img-cap-1 text-center">
-                                            <img src="images/ima/16.jpeg" height="150px" alt="Sponsor 1">
+                                            <img src="images/ima/16.jpg"  alt="Team 1">
                                             <p class="mt-2"><strong>Mr.C.Obed Otto</strong></p>
                                             <p class="text-muted">Event Director</p>
                                         </div>
@@ -395,7 +395,7 @@
                                     <!-- Sponsor 2 -->
                                     <div class="col-lg-4 col-md-4 col-6">
                                         <div class="de-img-cap-1 text-center">
-                                            <img src="images/ima/12.jpeg" alt="Sponsor 2" height="150px">
+                                            <img src="images/ima/12.jpg" alt="Team 2" >
                                             <p class="mt-2"><strong>Ms. Akila Mohan</strong></p>
                                             <p class="text-muted">Executive Coordinator</p>
                                         </div>
@@ -403,7 +403,7 @@
                                     <!-- Sponsor 3 -->
                                     <div class="col-lg-4 col-md-4 col-6">
                                         <div class="de-img-cap-1 text-center">
-                                            <img src="images/ima/14.jpeg" height="150px" alt="Sponsor 3">
+                                            <img src="images/ima/14.jpg" alt="Team 3">
                                             <p class="mt-2"><strong>Mr.Sarankumar</strong></p>
                                             <p class="text-muted">Lead Organizer</p>
                                         </div>
@@ -415,7 +415,7 @@
                                     <!-- Sponsor 4 -->
                                     <div class="col-lg-4 col-md-4 col-6">
                                         <div class="de-img-cap-1 text-center">
-                                            <img src="images/ima/1.jpeg" height="150px" alt="Sponsor 4">
+                                            <img src="images/ima/1.jpg"  alt="Team 4">
                                             <p class="mt-2"><strong>Mr.Karthick</strong></p>
                                             <p class="text-muted">Operations Lead</p>
                                         </div>
@@ -423,7 +423,7 @@
                                     <!-- Sponsor 5 -->
                                     <div class="col-lg-4 col-md-4 col-6">
                                         <div class="de-img-cap-1 text-center">
-                                            <img src="images/ima/13.jpeg" height="150px" alt="Sponsor 5">
+                                            <img src="images/ima/13.jpg" alt="Team 5">
                                             <p class="mt-2"><strong>Mr.Aldrin Lijo</strong></p>
                                             <p class="text-muted">Strategic Lead</p>
                                         </div>
@@ -431,7 +431,7 @@
                                     <!-- Sponsor 6 -->
                                     <div class="col-lg-4 col-md-4 col-6">
                                         <div class="de-img-cap-1 text-center">
-                                            <img src="images/ima/11.jpeg" height="150px" alt="Sponsor 6">
+                                            <img src="images/ima/11.jpg" alt="Team 6">
                                             <p class="mt-2"><strong>Mr.Santhan Kumar</strong></p>
                                             <p class="text-muted">Technical Lead</p>
                                         </div>
@@ -443,188 +443,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="de-gradient-edge-bottom"></div>
             </section>            
-            
-
-            <!-- <section id="section-schedule" class="jarallax no-bottom">
-                <img src="images/background/4.jpg" class="jarallax-img" alt="">
-                <div class="de-gradient-edge-top"></div>
-                <div class="container position-relative z1000">
-                    <div class="row">
-                        <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
-                            <h2 class="text-uppercase wow fadeInUp" style="margin-bottom: 20px;">
-                                <span class="text-line">Hackathon</span>
-                                <span class="text-gradient">Timeline</span>
-                            </h2>
-                            <div class="spacer-single"></div>
-                        </div>
-
-                        <div class="col-md-12 wow fadeInUp">
-                            <div class="de_tab tab_style_4 text-center">
-                                <ul class="de_nav de_nav_dark" style="display: flex; justify-content: center; padding: 0; margin: 0 auto;">
-                                    <li class="active" data-link="#section-services-tab" style="flex: 1; margin: 0 ; padding: 10px; background-color: #222; border-radius: 5px;">
-                                        <h3 style="margin: 0;">Day 1</h3>
-                                        <h4 style="margin: 5px 0;">Nov 8, 2024</h4>
-                                    </li>
-                                    <li data-link="#section-services-tab" style="flex: 1; margin: 0 px; padding: 10px; background-color: #222; border-radius: 5px;">
-                                        <h3 style="margin: 0;">Day 2</h3>
-                                        <h4 style="margin: 5px 0;">Nov 9, 2024</h4>
-                                    </li>
-                                </ul>
-
-                                <div class="text-start" style="margin-top: 30px;">
-                                    <div class="de_tab_content">
-                                        <div id="tab1" class="tab_single_content dark">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item" style="margin-bottom: 20px;">
-                                                            <div class="sc-time" style="font-weight: bold;">08:00 AM - 10:00 AM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Hackathon Kickoff and Problem Statement Release</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item" style="margin-bottom: 20px;">
-                                                            <div class="sc-time" style="font-weight: bold;">11:00 AM - 1:00 PM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Ideation and Team Discussion</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item" style="margin-bottom: 20px;">
-                                                            <div class="sc-time" style="font-weight: bold;">1:00 PM - 2:00 PM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Lunch Break</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item" style="margin-bottom: 20px;">
-                                                            <div class="sc-time" style="font-weight: bold;">2:00 PM - 5:00 PM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Initial Implementation and Coding Sprint 1</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item" style="margin-bottom: 20px;">
-                                                            <div class="sc-time" style="font-weight: bold;">5:00 PM - 6:00 PM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Progress Checkpoint 1</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item" style="margin-bottom: 20px;">
-                                                            <div class="sc-time" style="font-weight: bold;">6:00 PM - 7:00 PM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Development and Coding Sprint 2</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item" style="margin-bottom: 20px;">
-                                                            <div class="sc-time" style="font-weight: bold;">7:00 PM - 8:00 PM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Dinner Break</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item" style="margin-bottom: 20px;">
-                                                            <div class="sc-time" style="font-weight: bold;">8:00 PM - 12:00 AM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Late Evening Development and Debugging Sprint</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div id="tab2" class="tab_single_content dark">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item">
-                                                            <div class="sc-time">12:00 AM - 1:00 AM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Fun Activities</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item">
-                                                            <div class="sc-time">1:00 AM - 3:00 AM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Late-Night Coding Sprint 3</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item">
-                                                            <div class="sc-time">3:00 AM - 6:00 AM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Development & Debugging</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item">
-                                                            <div class="sc-time">6:00 AM - 7:00 AM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Progress Checkpoint 2</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item">
-                                                            <div class="sc-time">7:00 AM - 8:00 AM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Breakfast Break</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item">
-                                                            <div class="sc-time">8:00 AM - 12:00 PM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Final Development & Testing Sprint</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="schedule-listing">
-                                                        <div class="schedule-item">
-                                                            <div class="sc-time">12:00 PM - 1:00 PM</div>
-                                                            <div class="sc-info">
-                                                                <h3>Final Testing, Submission & Polishing</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="de-gradient-edge-bottom"></div>
-            </section> -->
-
-
             <section id="section-sponsors">
                 <div class="container">
                     <!-- Our Sponsors Heading -->
@@ -642,19 +461,24 @@
                             <h3 class="text-uppercase wow fadeInUp"><span class="text-gradient">Gold Sponsors</span></h3>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
-                            <a href="https://devfolio.co/">
-                                <img src="images/sponsors/devfolio.png" class="img-fluid" alt="devfolio">
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-6 mb-4">
-                            <a href="https://polygon.technology/">
-                                <img src="images/sponsors/polygon.png" class="img-fluid" alt="polygon">
+                            <a href="https://www.acer.com/in-en">
+                                <img src="images/sponsors/acer.png" class="img-fluid" alt="devfolio" style="border-radius: 8px;">
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://www.ssinformation.in/">
-                                <img src="images/sponsors/ss_info.png" class="img-fluid" alt="polygon">
+                                <img src="images/sponsors/ss_info.png" class="img-fluid" alt="SS information System private Limited" style="border-radius: 8px;" >
                             </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-6 mb-4">
+                            <a href="https://devfolio.co/">
+                                <img src="images/sponsors/devfolio72.png" class="img-fluid" alt="devfolio" style="border-radius: 8px;">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-6 mb-4">
+                            <a href="https://polygon.technology/">
+                                <img src="images/sponsors/polygon72.png" class="img-fluid" alt="polygon" style="border-radius: 8px;">
+                            </a> 
                         </div>
                     </div>
             
@@ -667,52 +491,52 @@
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://replit.com/">
-                                <img src="images/sponsors/replit.png" class="img-fluid" alt="replit">
+                                <img src="images/sponsors/replit72.png" class="img-fluid" alt="Silver Sponsor 1" style="border-radius: 8px;">
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://ethindia2024.devfolio.co/">
-                                <img src="images/sponsors/ethindia.png" class="img-fluid" alt="ethindia">
+                                <img src="images/sponsors/ethindia.png" class="img-fluid" alt="Silver Sponsor 2" style="border-radius: 8px;">
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://interviewbuddy.net/">
-                                <img src="images/sponsors/interview_buddy.png" class="img-fluid" alt="interview_buddy">
+                                <img src="images/sponsors/interview_buddy72.png" class="img-fluid" alt="Silver Sponsor 3" style="border-radius: 8px;">
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://gen.xyz/">
-                                <img src="images/sponsors/xyz.jpg" class="img-fluid" alt="ethindia">
+                                <img src="images/sponsors/xyz72.jpg" class="img-fluid" alt="Silver Sponsor 4" style="border-radius: 8px;">
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://incogni.com/">
-                                <img src="images/sponsors/incogni.png" class="img-fluid" alt="ethindia">
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-6 mb-4">
-                            <a href="https://zsecurity.org/">
-                                <img src="images/sponsors/z_security.png" class="img-fluid" alt="ethindia">
+                                <img src="images/sponsors/incogni72.png" class="img-fluid" alt="Silver Sponsor 5" style="border-radius: 8px;">
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://nordpass.com/">
-                                <img src="images/sponsors/NordPass.png" class="img-fluid" alt="ethindia">
+                                <img src="images/sponsors/NordPass72.png" class="img-fluid" alt="Silver Sponsor 6" style="border-radius: 8px;">
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://nordvpn.com/cybersecurity-site/">
-                                <img src="images/sponsors/NordVPN.png" class="img-fluid" alt="ethindia">
+                                <img src="images/sponsors/NordVPN72.png" class="img-fluid" alt="Silver Sponsor 7" style="border-radius: 8px;">
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://saily.com/">
-                                <img src="images/sponsors/saily.png" class="img-fluid" alt="ethindia">
+                                <img src="images/sponsors/saily72.png" class="img-fluid" alt="Silver Sponsor 8" style="border-radius: 8px;">
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://www.slido.com/">
-                                <img src="images/sponsors/slido.png" class="img-fluid" alt="ethindia">
+                                <img src="images/sponsors/flatlogic.png" class="img-fluid" alt="Silver Sponsor 9" style="border-radius: 8px;">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-6 mb-4">
+                            <a href="https://www.slido.com/">
+                                <img src="images/sponsors/slido72.png" class="img-fluid" alt="Silver Sponsor 9" style="border-radius: 8px;">
                             </a>
                         </div>
                     </div>
@@ -726,45 +550,32 @@
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://gdg.community.dev/gdg-on-campus-saveetha-school-of-engineering-thandalam-india/">
-                                <img src="images/sponsors/GDC_SIMATS.png" class="img-fluid" alt="Bronze Sponsor 1">
+                                <img src="images/sponsors/GDC_SIMATS72.png" class="img-fluid" alt="Community Partner 1" style="border-radius: 8px;">
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://gdg.community.dev/gdg-on-campus-panimalar-institute-of-technology-chennai-india/">
-                                <img src="images/sponsors/GDC_PIT.png" class="img-fluid" alt="Bronze Sponsor 1">
+                                <img src="images/sponsors/GDC_PIT72.png" class="img-fluid" alt="Community Partner 2" style="border-radius: 8px;">
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://x.com/web3chennai">
-                                <img src="images/sponsors/web3.png" class="img-fluid" alt="Bronze Sponsor 2">
+                                <img src="images/sponsors/web372.png" class="img-fluid" alt="Community Partner 3" style="border-radius: 8px;">
                             </a>
                         </div>
                         <div class="col-lg-2 col-md-4 col-6 mb-4">
                             <a href="https://pechacks.org/">
-                                <img src="images/sponsors/pec_hacks.png" class="img-fluid" alt="Bronze Sponsor 2">
+                                <img src="images/sponsors/pec_hacks72.png" class="img-fluid" alt="Community Partner 4" style="border-radius: 8px;">
                             </a>
                         </div>
                     </div>
 
                     <div class="spacer-single"></div>
-            
-                    <!-- Community Partners -->
-                    <!-- <div class="row g-4 justify-content-center">
-                        <div class="col-md-12 text-center">
-                            <h3 class="text-uppercase wow fadeInUp"><span class="text-gradient">Community Partners</span></h3>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-6 mb-4">
-                            <img src="images/sponsors/logo-5.png" class="img-fluid" alt="Community Partner 1">
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-6 mb-4">
-                            <img src="images/sponsors/logo-6.png" class="img-fluid" alt="Community Partner 2">
-                        </div>
-                    </div> -->
                 </div>
             </section>
 
             <section id="section-gallery" class="jarallax">
-                <img src="images/background/2-flip.jpg" class="jarallax-img" alt="">
+                <img src="images/background/2-flip72.jpg" class="jarallax-img" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 text-center">
@@ -786,7 +597,7 @@
                                         <img src="images/gallery/3.jpg" class="d-block w-100" alt="">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="images/gallery/4.jpg" class="d-block w-100" alt="">
+                                        <img src="images/gallery/472.jpg" class="d-block w-100" alt="">
                                     </div>
                                     <div class="carousel-item">
                                         <img src="images/gallery/5.jpg" class="d-block w-100" alt="">
@@ -813,7 +624,7 @@
                                         <img class="d-block w-100 img-fluid" src="images/gallery/3.jpg" alt="">
                                     </button>
                                     <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="3" aria-label="Slide 4" style="width: 100px;">
-                                        <img class="d-block w-100 img-fluid" src="images/gallery/4.jpg" alt="">
+                                        <img class="d-block w-100 img-fluid" src="images/gallery/472.jpg" alt="">
                                     </button>
                                     <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="4" aria-label="Slide 5" style="width: 100px;">
                                         <img class="d-block w-100 img-fluid" src="images/gallery/5.jpg" alt="">
@@ -847,7 +658,7 @@
                                         <span class="accordion-icon">+</span>
                                     </button>
                                     <div class="accordion-content">
-                                        <p>No, registrations for the event are entirely free of charge.</p>
+                                        <p>No, registrations for the event are entirely free of cost.</p>
                                     </div>
                                 </div>
 
@@ -922,7 +733,7 @@
                                         <span class="accordion-icon">+</span>
                                     </button>
                                     <div class="accordion-content">
-                                        <p>No, this hackathon is a team event. You can team up with others in our community group.</p>
+                                        <p>No, this hackathon is a team event. You should contain 2 - 4 members.</p>
                                     </div>
                                 </div>
 
@@ -952,7 +763,7 @@
                                         <span class="accordion-icon">+</span>
                                     </button>
                                     <div class="accordion-content">
-                                        <p>Yes, this hackathon is open to high school and undergraduate students.</p>
+                                        <p>Yes, this hackathon is open to undergraduate students.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1006,15 +817,12 @@
                 <div class="row g-4">
                     <div class="col-lg-4 text-lg-start text-sm-center">
                         <div class="social-icons">
-                            <a href="https://www.facebook.com/techsocietysec" target="_self"><i class="fa fa-facebook fa-lg"></i></a>
-                            <a href="https://x.com/techsocietysec" target="_self"><i class="fa fa-twitter fa-lg"></i></a>
-                            <a href="https://www.linkedin.com/company/techsociety-sec/" target="_self"><i class="fa fa-linkedin fa-lg"></i></a>
-                            <a href="https://instagram.com/techsocietysec" target="_self"><i class="fa fa-instagram fa-lg"></i></a>
+                            <a href="https://www.facebook.com/techsocietysec" target="_self"><i class="fa fa-facebook fa-lg" style="border-radius: 8px;"></i></a>
+                            <a href="https://x.com/techsocietysec" target="_self"><i class="fa fa-twitter fa-lg" style="border-radius: 8px;"></i></a>
+                            <a href="https://www.linkedin.com/company/techsociety-sec/" target="_self"><i class="fa fa-linkedin fa-lg" style="border-radius: 8px;"></i></a>
+                            <a href="https://instagram.com/techsocietysec" target="_self"><i class="fa fa-instagram fa-lg" style="border-radius: 8px;"></i></a>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-4 text-lg-center text-sm-center">
-                        <img src="images/lo-removebg-preview.png" style="max-width: 120px;" alt="">
-                    </div> -->
                     <div class="col-lg-4 text-lg-end text-sm-center">
                         © 2024 Tech Society - Saveetha Engineering College.
                     </div>
@@ -1030,6 +838,31 @@
     <script src="js/custom-marquee.js"></script>
     <script src="js/jquery.countdown.js"></script>
     <script src="js/countdown-custom.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+            if ("IntersectionObserver" in window) {
+            let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove("lazy");
+                    lazyImageObserver.unobserve(lazyImage);
+                }
+                });
+            });
+        
+            lazyImages.forEach(function(lazyImage) {
+                lazyImageObserver.observe(lazyImage);
+            });
+            } else {
+            lazyImages.forEach(function(lazyImage) {
+                lazyImage.src = lazyImage.dataset.src;
+            });
+            }
+        });
+    </script>
 
 </body>
 
