@@ -20,28 +20,6 @@
     <link href="css/coloring.css" rel="stylesheet" type="text/css" crossorigin>
     <!-- color scheme -->
     <link id="colors" href="css/colors/blue-teal.css" rel="stylesheet" type="text/css">
-    <script>
-        // Preloader
-        $(window).on("load", function () {
-            $("#de-loader").fadeOut();
-            $("#wrapper").removeClass("dark-scheme");
-        });
-        // Smooth scrolling
-        $(document).ready(function () {
-            $("a").on("click", function (event) {
-                if (this.hash !== "") {
-                    event.preventDefault();
-                    var hash = this.hash;
-                    $("html, body").animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function () {
-                        window.location.hash = hash;
-                    });
-                }
-            });
-        });
-
-    </script>
 </head>
 
 <body class="dark-scheme">
