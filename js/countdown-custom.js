@@ -1,11 +1,11 @@
 jQuery(document).ready(function () {
-  // Set target date (November 8, 2024, at 8 AM)
-  const targetDate = new Date(2024, 10, 8, 8).getTime();
+  // Set target date (November 8, 2024, at 10 AM)
+  const targetDate = new Date(2024, 10, 8, 11).getTime();
 
   //Railway timing//
   // Initialize jQuery countdown using the plugin
   jQuery("#defaultCountdown").countdown({
-    until: new Date(2024, 10, 8, 8), // Countdown to November 8, 2024, 08:00 AM
+    until: new Date(2024, 10, 8, 11), // Countdown to November 8, 2024, 11:00 AM
     format: "ODHMS", // Display format (days, hours, minutes, seconds)
     onExpiry: function () {
       // Callback function when the countdown expires
@@ -53,8 +53,45 @@ function startCountdown(targetDate) {
       document.querySelector(".hours").innerText = "00";
       document.querySelector(".minutes").innerText = "00";
       document.querySelector(".seconds").innerText = "00";
+
+      // Ensure the button is visible
+      const btn = document.querySelector("#btn-probl");
+      btn.style.display = "inline-block"; // Make sure button is shown
+      btn.addEventListener("click", () => {
+        // Trigger confetti effect when the button is clicked
+        if (typeof confetti === "function") {
+          confetti({
+            particleCount: 300,
+            spread: 90,
+            origin: { x: 1, y: 0.9 },
+          });
+          confetti({
+            particleCount: 300,
+            spread: 90,
+            origin: { x: 0, y: 0.9 },
+          });
+        }
+      });
+
+      triggerConfetti();
     }
   }, 1000);
+}
+
+// Function to trigger confetti animation
+function triggerConfetti() {
+  // Trigger confetti animation on both sides
+  confetti({
+    particleCount: 900,
+    spread: 100,
+    origin: { x: 1, y: 0.9 },
+  });
+
+  confetti({
+    particleCount: 900,
+    spread: 100,
+    origin: { x: 0, y: 0.9 },
+  });
 }
 
 // FAQ Accordion JS

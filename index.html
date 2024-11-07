@@ -169,6 +169,7 @@
             <section class="no-top countdown-container">
                 <div class="container">
                     <div class="row text-center">
+                        <h2 class="text-uppercase wow fadeInUp">Almost There! The <span class="text-gradient">Problem Statement </span>Will Be Revealed Soon!</h2>
                         <div class="col-md-3 col-sm-6 mb-sm-30 position-relative">
                             <div class="de_count position-absolute top-50 start-50 translate-middle text-light wow fadeInUp">
                                 <h3 class="timer days text-gradient" data-to="0" data-speed="1">0</h3>
@@ -199,17 +200,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="spacer-60"></div>
+                <canvas id="#confetti"></canvas>
+                <!-- <div class="spacer-20"></div> -->
                 <div class="col-lg-12 text-center">
                     <div class="col-lg-12">
-                        <a class="btn-main big wow fadeInLeft" href="">Problem statement</a>
+                        <!-- <a id="startCountdownBtn" class="btn-main big">Start Countdown</a> -->
+                        <a id="btn-probl" href="./problemStatement/index.html" class="btn-prob big">Problem statements 🎉</a>
                     </div>
-                    <div class="spacer-40"></div>
                 </div>
-                
             </section>
-            
 
+            
+            <!-- Timeline -->
             <section id="hackathon-timeline">
                 <div class="background-container">
                     <div class="stars"></div>
@@ -298,6 +300,214 @@
                 </div>
             </section>
 
+            <!-- section-schedule -->
+            <section id="section-schedule" class="jarallax no-bottom">
+                <img src="images/background/4.jpg" class="jarallax-img" alt="">
+                <div class="de-gradient-edge-top"></div>
+                <div class="container position-relative z1000">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3 text-center wow fadeInUp">
+                            <h2 class="text-uppercase wow fadeInUp"><span class="text-line">Event</span> <span class="text-gradient">Schedule</span></h2>
+                            <div class="spacer-single"></div>
+                        </div>
+
+                        <div class="col-md-12 wow fadeInUp">
+                            <div class="de_tab tab_style_4 text-center">
+                                <ul class="de_nav de_nav_dark">
+                                    <li class="active" data-link="#section-services-tab">
+                                        <h3>Day 1</h3>
+                                        <h4>Nov 8, 2024</h4>
+                                    </li>
+                                    <li data-link="#section-services-tab">
+                                        <h3>Day 2</h3>
+                                        <h4>Nov 9, 2024</h4>
+                                    </li>
+                                </ul>
+
+                                <div class="text-start">
+                                    <div class="de_tab_content">
+
+                                        <div id="tab1" class="tab_single_content dark">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="schedule-listing event-item ">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">08:30 AM - 10:00 AM</div>
+                                                            <div class="sc-name">
+                                                                <span>INAGURATION</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">10:00 AM - 10:15 AM</div>
+                                                            <div class="sc-name">
+                                                                <span>PROBLEM STATEMENT RELEASE</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">10:15 AM - 01:00 PM</div>
+                                                            <div class="sc-name">
+                                                                <span>IDEATION AND TEAM DISCUSSION</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">01:00 PM - 02:00 PM</div>
+                                                            <div class="sc-name">
+                                                                <span>LUNCH BREAK</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">02:00 PM - 05:00 PM</div>
+                                                            <div class="sc-name">
+                                                                <span>INITIAL IMPLEMENTATION & CODING SPRINT 1</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">05:00 PM - 06:00 PM</div>
+                                                            <div class="sc-name">
+                                                                <span>PROGRESS CHECKPOINT 1</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">06:00 PM - 07:00 PM</div>
+                                                            <div class="sc-name">
+                                                                <span>DEVELOPMENT & CODING SPRINT 2</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">07:00 PM - 08:00 PM</div>
+                                                            <div class="sc-name">
+                                                                <span>DINNER</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">08:00 PM - 12:00 PM</div>
+                                                            <div class="sc-name">
+                                                                <span>LATE EVENING DEVELOPMENT & DEBUGGING SPRINT</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="tab2" class="tab_single_content dark">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">12:00 AM - 01:00 AM</div>
+                                                            <div class="sc-name">
+                                                                <span>FAM SESSION</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">01:00 AM - 03:00 AM</div>
+                                                            <div class="sc-name">
+                                                                <span>LATE-NIGHT CODING SPRINT 3</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">03:00 AM - 06:00 AM</div>
+                                                            <div class="sc-name">
+                                                                <span>DEVELOPMENT & DEBUGGING</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">06:00 AM - 07:00 AM</div>
+                                                            <div class="sc-name">
+                                                                <span>PROGRESS CHECKPOINT 2</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">07:00 AM - 08:00 AM</div>
+                                                            <div class="sc-name">
+                                                                <span>BREAKFAST BREAK</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">08:00 AM - 12:00 PM</div>
+                                                            <div class="sc-name">
+                                                                <span>FINAL DEVELOPMENT & TEST SPRINT</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="schedule-listing event-item">
+                                                        <div class="schedule-item">
+                                                            <div class="sc-time">12:00 PM - 1:00 PM</div>
+                                                            <div class="sc-name">
+                                                                <span>FINAL TESTING,SUBMISSION & POLISHING</span>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="de-gradient-edge-bottom"></div>
+            </section>
+
             <section id="section-Prize">
                 <div class="container">
                     <div class="row">
@@ -347,6 +557,8 @@
                     </div>
                 </div>
             </section>
+
+
             
 
             <section id="section-experts">
@@ -897,6 +1109,26 @@
         </footer>
         <!-- footer close -->
     </div>
+
+    <!-- Confetti animation library from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+        const fireBtn = document.querySelector(".fire-btn");
+  
+        fireBtn.addEventListener("click", () => {
+          confetti({
+            particleCount: 300,
+            spread: 90,
+            origin: { x: 1, y: 0.9 },
+          });
+  
+          confetti({
+            particleCount: 300,
+            spread: 90,
+            origin: { x: 0, y: 0.9 },
+          });
+        });
+      </script>
 
     <!-- Javascript Files -->
     <script src="js/plugins.js"></script>
