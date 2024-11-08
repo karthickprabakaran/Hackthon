@@ -1,11 +1,11 @@
 jQuery(document).ready(function () {
   // Set target date (November 8, 2024, at 10 AM)
-  const targetDate = new Date(2024, 10, 8, 11).getTime();
+  const targetDate = new Date(2024, 10, 9, 11).getTime();
 
   //Railway timing//
   // Initialize jQuery countdown using the plugin
   jQuery("#defaultCountdown").countdown({
-    until: new Date(2024, 10, 8, 11), // Countdown to November 8, 2024, 11:00 AM
+    until: new Date(2024, 10, 9, 11), // Countdown to November 8, 2024, 11:00 AM
     format: "ODHMS", // Display format (days, hours, minutes, seconds)
     onExpiry: function () {
       // Callback function when the countdown expires
